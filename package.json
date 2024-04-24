@@ -38,7 +38,7 @@
       "@typescript-eslint/naming-convention": "error",
       "@typescript-eslint/brace-style": "error",
       "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/prefer-for-of": "warn",
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",

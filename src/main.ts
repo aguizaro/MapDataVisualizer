@@ -2,7 +2,7 @@ import "leaflet/dist/leaflet.css";
 import "./style.css";
 import leaflet, { LatLng, LeafletMouseEvent, geoJSON } from "leaflet";
 import "./leafletWorkaround";
-import { Feature, GeoJsonObject } from "geojson";
+import { GeoJsonObject } from "geojson";
 
 // leaflet map vars --------------------------------------------------------------------------------------------------------
 
