@@ -1,0 +1,199 @@
+:root {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#cellCoords {
+  color: red;
+}
+
+#numCoins {
+  color: red
+}
+
+#controlPanel {
+  padding: 1rem;
+}
+
+#statusPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: rgb(172, 167, 246);
+  border-radius: 20px;
+}
+
+#pop-up-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1px;
+  background-color: rgb(184, 179, 252);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#pop-up-title {
+  font-weight: 500;
+}
+
+#pop-up-container button {
+  background-color: blueviolet;
+  margin: 2px;
+}
+
+#button-container {
+  height: 150px;
+  overflow-y: auto;
+  margin: 10px;
+}
+
+#messages {
+  color: red;
+  justify-self: center;
+  max-width: 80%;
+  font-size: 1rem;
+  background-color: #242424;
+  margin-left: 25px;
+}
+
+#map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 80vh;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 70vh;
+  margin-top: 2em;
+}
+
+#panels {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#infoPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+#controlPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#countryName {
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  :root {
+    font-size: 11px;
+  }
+
+  button {
+    font-size: 1.5em;
+  }
+
+
+}
