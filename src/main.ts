@@ -20,6 +20,7 @@ leaflet
     {
       minZoom: 0,
       maxZoom: MAX_ZOOM,
+
       attribution:
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }
