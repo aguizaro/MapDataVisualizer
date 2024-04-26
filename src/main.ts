@@ -2,42 +2,48 @@ import "leaflet/dist/leaflet.css";
 import "./style.css";
 import leaflet, { LatLng, LeafletMouseEvent, geoJSON } from "leaflet";
 import "./leafletWorkaround";
-import { GeoJsonObject } from "geojson";
+import { GeoJsonObject, Feature } from "geojson";
 
-// leaflet map vars --------------------------------------------------------------------------------------------------------
+// html elements -----------------------------------------------------------------------------------------------------
+const countryNameDiv = document.querySelector("#countryName")!;
+const casesDiv = document.querySelector("#cases")!;
+const deathsDiv = document.querySelector("#deaths")!;
+const deathsperConfirmedDiv = document.querySelector("#deathsPerConfirmed")!;
 
-const MAX_ZOOM = 19;
+// leaflet map vars--------------------------------------------------------------------------------------------------------
+
 const map = leaflet.map("map").setView([0, 0], 2);
 const playerPos: leaflet.LatLng = new LatLng(0, 0);
 const playerMarker = leaflet.marker(playerPos);
 
+// custom data types -----------------------------------------------------------------------------------------------------
+
+interface CountryData {
+  confirmed: number;
+  deaths: number;
+  recovered: number;
+}
+
+type CountryStats = Record<string, CountryData>;
+
+interface CovidData {
+  count: number;
+  date: string;
+  result: CountryStats[];
+}
+
 // openstreet map -----------------------------------------------------------------------------------------------------
 
-// sattelite map
 leaflet
-  .tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    {
-      minZoom: 0,
-      maxZoom: MAX_ZOOM,
-
-      attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }
-  )
+  .tileLayer("https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png", {
+    minZoom: 1,
+    maxZoom: 8,
+    attribution:
+      '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  })
   .addTo(map);
 
 // labels
-leaflet
-  .tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png",
-    {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: MAX_ZOOM,
-    }
-  )
-  .addTo(map);
 
 // map buttons -----------------------------------------------------------------------------------------------------
 
@@ -63,6 +69,17 @@ sensorButton.addEventListener("touchstart", (e) => {
     });
 });
 
+// covid data -----------------------------------------------------------------------------------------------------
+async function fetchCovidData(): Promise<CovidData> {
+  const response = await fetch("latest.json");
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch covid data");
+  }
+  const data = (await response.json()) as CovidData;
+  return data;
+}
+
 // geolocation -----------------------------------------------------------------------------------------------------
 
 function updatePosition(): Promise<string> {
@@ -80,64 +97,174 @@ function updatePosition(): Promise<string> {
   });
 }
 
+// helper functions -----------------------------------------------------------------------------------------------------
+
 async function updateMap() {
   try {
     await updatePosition();
     playerMarker.setLatLng(playerPos);
     playerMarker.addTo(map);
-    map.setView(playerMarker.getLatLng(), 5);
+    map.setView(playerMarker.getLatLng(), 4);
   } catch (error) {
     console.error(error);
   }
 }
 
-// map interactions -----------------------------------------------------------------------------------------------------
+function calculateColor(countryData: CountryData): string {
+  //country data is not this
+  if (countryData === undefined) {
+    return "clear";
+  }
+  const deaths = countryData.deaths;
+  const confirmed = countryData.confirmed;
+  const deathsPerConfirmed = deaths / confirmed;
 
-// geoJSON for country boundaries
-const geoJSONLayer = geoJSON();
-fetch(
-  "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json"
-)
-  .then((response) => response.json())
-  .then((data: GeoJsonObject) => {
-    geoJSONLayer.addData(data);
-    //fill
-    geoJSONLayer.setStyle({
-      fillColor: "clear",
-      fillOpacity: 0.25,
-      weight: 1,
-    });
-    //hover over individual country
-    geoJSONLayer.eachLayer((layer) => {
-      layer.on("mouseover", (event: LeafletMouseEvent) => {
-        const targetLayer = event.target;
-        targetLayer.setStyle({
-          fillColor: "blue",
-          fillOpacity: 0.5,
-        });
-        //display country name
-        const countryName = targetLayer.feature.properties.name;
-        const countryNameDiv = document.querySelector("#countryName")!;
-        countryNameDiv.textContent = countryName;
-      });
-      //reset style on mouseout
-      layer.on("mouseout", (event: LeafletMouseEvent) => {
-        const targetLayer = event.target;
-        targetLayer.setStyle({
-          fillColor: "clear",
-          fillOpacity: 0.25,
-        });
-        //clear country name
-        const countryNameDiv = document.querySelector("#countryName")!;
-        countryNameDiv.textContent = "";
-      });
-      //zoom to country on click
-      layer.on("click", (event: LeafletMouseEvent) => {
-        map.fitBounds(event.target.getBounds() as leaflet.LatLngBoundsLiteral);
-      });
-    });
-    geoJSONLayer.addTo(map);
-  })
-  .catch((error) => {
-    console.error(error);
+  if (deathsPerConfirmed < 0.01) {
+    return "green";
+  }
+  if (deathsPerConfirmed < 0.02) {
+    return "yellow";
+  }
+  if (deathsPerConfirmed < 0.03) {
+    return "orange";
+  }
+  if (deathsPerConfirmed < 0.5) {
+    return "red";
+  }
+  return "maroon";
+}
+
+// geoJSON event handlers -----------------------------------------------------------------------------------------------------
+
+function onHover(e: LeafletMouseEvent) {
+  const targetLayer = e.target;
+  targetLayer.setStyle({
+    fillOpacity: 0.9,
   });
+
+  //display country name
+  const countryName = targetLayer.feature.properties.name;
+  if (countryNameDiv.textContent !== countryName) {
+    countryNameDiv.textContent = countryName;
+
+    //clear country data
+    casesDiv.textContent = "";
+    deathsDiv.textContent = "";
+    deathsperConfirmedDiv.textContent = "";
+  }
+}
+
+function onOut(e: LeafletMouseEvent) {
+  // reset opacity
+  e.target.setStyle({
+    fillOpacity: 0.6,
+  });
+}
+
+function onClick(e: LeafletMouseEvent) {
+  //delete previous tooltip
+  map.eachLayer((layer) => {
+    if (layer instanceof leaflet.Tooltip) {
+      map.removeLayer(layer);
+    }
+  });
+
+  const targetLayer = e.target;
+
+  //zoom to country on click
+  map.fitBounds(targetLayer.getBounds() as leaflet.LatLngBoundsLiteral);
+
+  targetLayer.setStyle({
+    fillOpacity: 0.9,
+  });
+
+  //display country name
+  const countryName = targetLayer.feature.properties.name;
+  countryNameDiv.textContent = countryName;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const countryData = covidStats.find((entry: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    return Object.keys(entry)[0] === targetLayer.feature.id;
+  });
+
+  // display country data as tooltip
+  let tooltipContent;
+  if (countryData) {
+    tooltipContent = `
+      <div">
+        <p><strong>Country: </strong><br>${
+          targetLayer.feature.properties.name
+        }</p>
+        <p><strong>Confirmed Cases: </strong><br>${countryData[
+          targetLayer.feature.id
+        ].confirmed.toLocaleString()}</p>
+        <p><strong>Deaths: </strong><br>${countryData[
+          targetLayer.feature.id
+        ].deaths.toLocaleString()}</p>
+        <p><strong>Case Fatality Rate: </strong><br>${(
+          (countryData[targetLayer.feature.id].deaths /
+            countryData[targetLayer.feature.id].confirmed) *
+          100
+        ).toFixed(2)}%</p>
+      </div>
+    `;
+  } else {
+    // no data found
+    tooltipContent = `<div>
+      <p><strong>Country: </strong><br>${targetLayer.feature.properties.name}</p>
+      <p><strong>NO DATA FOUND </strong>`;
+  }
+  //open tooltip
+  targetLayer.bindTooltip(tooltipContent, { permanent: true }).openTooltip();
+}
+
+// calculate deaths per confirmed covid case for each country
+function onEach(feature: Feature, layer: leaflet.Layer) {
+  const countryCode = feature.id;
+  const countryStats = covidStats.find((entry) => {
+    return Object.keys(entry)[0] === countryCode;
+  });
+
+  // set color based on covid data
+  const pathLayer = layer as leaflet.Path;
+  const fillColor = countryStats
+    ? calculateColor(countryStats[countryCode!])
+    : "clear";
+  pathLayer.setStyle({
+    fillColor: fillColor,
+    fillOpacity: 0.6,
+  });
+
+  // add event listeners
+  pathLayer.on({ mouseover: onHover, mouseout: onOut, click: onClick });
+}
+
+// map setup -----------------------------------------------------------------------------------------------------
+
+let covidStats: CountryStats[] = [];
+
+async function mapSetup() {
+  // get covid data
+  const dataObj = await fetchCovidData();
+  covidStats = dataObj.result;
+  // get geojson data
+  const data = await fetch(
+    "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json"
+  );
+  const geoJSONData = (await data.json()) as GeoJsonObject;
+  // geojson layer
+  geoJSON(geoJSONData, {
+    onEachFeature: onEach,
+    style: {
+      fillOpacity: 0.6,
+      weight: 1,
+    },
+  }).addTo(map);
+}
+
+// main -----------------------------------------------------------------------------------------------------
+
+mapSetup().catch((error) => {
+  console.error(error);
+});

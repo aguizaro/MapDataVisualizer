@@ -154,6 +154,7 @@ button:focus-visible {
 
 #infoPanel {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -170,6 +171,28 @@ button:focus-visible {
 #countryName {
   font-size: 1.8em;
   font-weight: 500;
+}
+
+.leaflet-tooltip {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  color: #111ac6;
+  border-radius: 20px;
+  background-color: #ffffff9e;
+}
+
+.leaflet-tooltip p {
+  font-size: 1.2em;
+  margin: 0.2em;
+  padding: 0.2em 1em;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.leaflet-tooltip p strong {
+  font-size: 0.7em;
 }
 
 @media (prefers-color-scheme: light) {
