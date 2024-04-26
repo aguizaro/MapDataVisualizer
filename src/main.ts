@@ -35,12 +35,16 @@ interface CovidData {
 // openstreet map -----------------------------------------------------------------------------------------------------
 
 leaflet
-  .tileLayer("https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png", {
-    minZoom: 1,
-    maxZoom: 8,
-    attribution:
-      '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  })
+  .tileLayer(
+    "https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}{r}.png?access-token={accessToken}",
+    {
+      attribution:
+        '<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      minZoom: 0,
+      maxZoom: 7,
+      accessToken: process.env.JAWG_MAP_KEY,
+    }
+  )
   .addTo(map);
 
 // labels
