@@ -36,13 +36,12 @@ interface CovidData {
 
 leaflet
   .tileLayer(
-    "https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}{r}.png?access-token={accessToken}",
+    `https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}{r}.png?access-token=${process.env.JAWG_MAP_KEY}`,
     {
       attribution:
         '<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       minZoom: 0,
       maxZoom: 7,
-      accessToken: process.env.JAWG_MAP_KEY,
     }
   )
   .addTo(map);
