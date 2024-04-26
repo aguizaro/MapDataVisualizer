@@ -71,7 +71,9 @@ sensorButton.addEventListener("touchstart", (e) => {
 
 // covid data -----------------------------------------------------------------------------------------------------
 async function fetchCovidData(): Promise<CovidData> {
-  const response = await fetch("latest.json");
+  const response = await fetch(
+    "https://raw.githubusercontent.com/aguizaro/MapDataVisualizer/main/latest.json"
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch covid data");
