@@ -1,0 +1,1955 @@
+[
+    {
+        "yearcode": "YR2021",
+        "countryname": "Afghanistan",
+        "countrycode": "AFG",
+        "totalpop": "40099462.0",
+        "netmigration": "-183672.0",
+        "ruralpop": "29547690.0",
+        "urbanpop": "10551772.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Albania",
+        "countrycode": "ALB",
+        "totalpop": "2811666.0",
+        "netmigration": "-10612.0",
+        "ruralpop": "1041188.0",
+        "urbanpop": "1770478.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Algeria",
+        "countrycode": "DZA",
+        "totalpop": "44177969.0",
+        "netmigration": "-18797.0",
+        "ruralpop": "11370967.0",
+        "urbanpop": "32807002.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "American Samoa",
+        "countrycode": "ASM",
+        "totalpop": "45035.0",
+        "netmigration": "-1646.0",
+        "ruralpop": "5778.0",
+        "urbanpop": "39257.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Andorra",
+        "countrycode": "AND",
+        "totalpop": "79034.0",
+        "netmigration": "1377.0",
+        "ruralpop": "9596.0",
+        "urbanpop": "69438.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Angola",
+        "countrycode": "AGO",
+        "totalpop": "34503774.0",
+        "netmigration": "29089.0",
+        "ruralpop": "11227528.0",
+        "urbanpop": "23276246.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Antigua and Barbuda",
+        "countrycode": "ATG",
+        "totalpop": "93219.0",
+        "netmigration": "0.0",
+        "ruralpop": "70492.0",
+        "urbanpop": "22727.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Argentina",
+        "countrycode": "ARG",
+        "totalpop": "45808747.0",
+        "netmigration": "2344.0",
+        "ruralpop": "3559798.0",
+        "urbanpop": "42248949.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Armenia",
+        "countrycode": "ARM",
+        "totalpop": "2790974.0",
+        "netmigration": "-12825.0",
+        "ruralpop": "1020631.0",
+        "urbanpop": "1770343.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Aruba",
+        "countrycode": "ABW",
+        "totalpop": "106537.0",
+        "netmigration": "501.0",
+        "ruralpop": "59803.0",
+        "urbanpop": "46734.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Australia",
+        "countrycode": "AUS",
+        "totalpop": "25685412.0",
+        "netmigration": "117929.0",
+        "ruralpop": "3502976.0",
+        "urbanpop": "22182436.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Austria",
+        "countrycode": "AUT",
+        "totalpop": "8955797.0",
+        "netmigration": "20314.0",
+        "ruralpop": "3672325.0",
+        "urbanpop": "5283472.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Azerbaijan",
+        "countrycode": "AZE",
+        "totalpop": "10137750.0",
+        "netmigration": "1084.0",
+        "ruralpop": "4381941.0",
+        "urbanpop": "5755809.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bahamas, The",
+        "countrycode": "BHS",
+        "totalpop": "407906.0",
+        "netmigration": "485.0",
+        "ruralpop": "67855.0",
+        "urbanpop": "340051.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bahrain",
+        "countrycode": "BHR",
+        "totalpop": "1463265.0",
+        "netmigration": "-9150.0",
+        "ruralpop": "151858.0",
+        "urbanpop": "1311407.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bangladesh",
+        "countrycode": "BGD",
+        "totalpop": "169356251.0",
+        "netmigration": "-174500.0",
+        "ruralpop": "103398765.0",
+        "urbanpop": "65957486.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Barbados",
+        "countrycode": "BRB",
+        "totalpop": "281200.0",
+        "netmigration": "-28.0",
+        "ruralpop": "193336.0",
+        "urbanpop": "87864.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Belarus",
+        "countrycode": "BLR",
+        "totalpop": "9302585.0",
+        "netmigration": "12961.0",
+        "ruralpop": "1868889.0",
+        "urbanpop": "7433696.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Belgium",
+        "countrycode": "BEL",
+        "totalpop": "11586195.0",
+        "netmigration": "52356.0",
+        "ruralpop": "218168.0",
+        "urbanpop": "11368027.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Belize",
+        "countrycode": "BLZ",
+        "totalpop": "400031.0",
+        "netmigration": "577.0",
+        "ruralpop": "215213.0",
+        "urbanpop": "184818.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Benin",
+        "countrycode": "BEN",
+        "totalpop": "12996895.0",
+        "netmigration": "1732.0",
+        "ruralpop": "6632056.0",
+        "urbanpop": "6364839.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bermuda",
+        "countrycode": "BMU",
+        "totalpop": "63764.0",
+        "netmigration": "291.0",
+        "ruralpop": "0.0",
+        "urbanpop": "63764.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bhutan",
+        "countrycode": "BTN",
+        "totalpop": "777486.0",
+        "netmigration": "291.0",
+        "ruralpop": "443105.0",
+        "urbanpop": "334381.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bolivia",
+        "countrycode": "BOL",
+        "totalpop": "12079472.0",
+        "netmigration": "-4666.0",
+        "ruralpop": "3566464.0",
+        "urbanpop": "8513008.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bosnia and Herzegovina",
+        "countrycode": "BIH",
+        "totalpop": "3270943.0",
+        "netmigration": "-25865.0",
+        "ruralpop": "1654279.0",
+        "urbanpop": "1616664.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Botswana",
+        "countrycode": "BWA",
+        "totalpop": "2588423.0",
+        "netmigration": "1816.0",
+        "ruralpop": "736148.0",
+        "urbanpop": "1852275.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Brazil",
+        "countrycode": "BRA",
+        "totalpop": "214326223.0",
+        "netmigration": "20376.0",
+        "ruralpop": "27182995.0",
+        "urbanpop": "187143228.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "British Virgin Islands",
+        "countrycode": "VGB",
+        "totalpop": "31122.0",
+        "netmigration": "128.0",
+        "ruralpop": "15897.0",
+        "urbanpop": "15225.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Brunei Darussalam",
+        "countrycode": "BRN",
+        "totalpop": "445373.0",
+        "netmigration": "-192.0",
+        "ruralpop": "95515.0",
+        "urbanpop": "349858.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Bulgaria",
+        "countrycode": "BGR",
+        "totalpop": "6877743.0",
+        "netmigration": "-8716.0",
+        "ruralpop": "1648939.0",
+        "urbanpop": "5228804.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Burkina Faso",
+        "countrycode": "BFA",
+        "totalpop": "22100683.0",
+        "netmigration": "-13097.0",
+        "ruralpop": "15196430.0",
+        "urbanpop": "6904253.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Burundi",
+        "countrycode": "BDI",
+        "totalpop": "12551213.0",
+        "netmigration": "-14415.0",
+        "ruralpop": "10786763.0",
+        "urbanpop": "1764450.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Cabo Verde",
+        "countrycode": "CPV",
+        "totalpop": "587925.0",
+        "netmigration": "-1274.0",
+        "ruralpop": "193416.0",
+        "urbanpop": "394509.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Cambodia",
+        "countrycode": "KHM",
+        "totalpop": "16589023.0",
+        "netmigration": "-24262.0",
+        "ruralpop": "12496843.0",
+        "urbanpop": "4092180.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Cameroon",
+        "countrycode": "CMR",
+        "totalpop": "27198628.0",
+        "netmigration": "-9889.0",
+        "ruralpop": "11383170.0",
+        "urbanpop": "15815458.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Canada",
+        "countrycode": "CAN",
+        "totalpop": "38226498.0",
+        "netmigration": "195181.0",
+        "ruralpop": "7013416.0",
+        "urbanpop": "31213082.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Cayman Islands",
+        "countrycode": "CYM",
+        "totalpop": "68136.0",
+        "netmigration": "276.0",
+        "ruralpop": "0.0",
+        "urbanpop": "68136.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Central African Republic",
+        "countrycode": "CAF",
+        "totalpop": "5457154.0",
+        "netmigration": "-85860.0",
+        "ruralpop": "3129787.0",
+        "urbanpop": "2327367.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Chad",
+        "countrycode": "TCD",
+        "totalpop": "17179740.0",
+        "netmigration": "9016.0",
+        "ruralpop": "13094226.0",
+        "urbanpop": "4085514.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Channel Islands",
+        "countrycode": "CHI",
+        "totalpop": "172683.0",
+        "netmigration": "1242.0",
+        "ruralpop": "119131.0",
+        "urbanpop": "53552.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Chile",
+        "countrycode": "CHL",
+        "totalpop": "19493184.0",
+        "netmigration": "113709.0",
+        "ruralpop": "2374855.0",
+        "urbanpop": "17118329.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "China",
+        "countrycode": "CHN",
+        "totalpop": "1412360000.0",
+        "netmigration": "-200194.0",
+        "ruralpop": "529465517.0",
+        "urbanpop": "882894483.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Colombia",
+        "countrycode": "COL",
+        "totalpop": "51516562.0",
+        "netmigration": "211978.0",
+        "ruralpop": "9406924.0",
+        "urbanpop": "42109638.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Comoros",
+        "countrycode": "COM",
+        "totalpop": "821625.0",
+        "netmigration": "-1772.0",
+        "ruralpop": "578317.0",
+        "urbanpop": "243308.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Congo, Dem. Rep.",
+        "countrycode": "COD",
+        "totalpop": "95894118.0",
+        "netmigration": "-64643.0",
+        "ruralpop": "51557473.0",
+        "urbanpop": "44336645.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Congo, Rep.",
+        "countrycode": "COG",
+        "totalpop": "5835806.0",
+        "netmigration": "-4466.0",
+        "ruralpop": "1850943.0",
+        "urbanpop": "3984863.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Costa Rica",
+        "countrycode": "CRI",
+        "totalpop": "5153957.0",
+        "netmigration": "2084.0",
+        "ruralpop": "957348.0",
+        "urbanpop": "4196609.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Cote d'Ivoire",
+        "countrycode": "CIV",
+        "totalpop": "27478249.0",
+        "netmigration": "-21000.0",
+        "ruralpop": "13140099.0",
+        "urbanpop": "14338150.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Croatia",
+        "countrycode": "HRV",
+        "totalpop": "3879000.0",
+        "netmigration": "-10402.0",
+        "ruralpop": "1633912.0",
+        "urbanpop": "2245088.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Cuba",
+        "countrycode": "CUB",
+        "totalpop": "11256372.0",
+        "netmigration": "-7068.0",
+        "ruralpop": "2556097.0",
+        "urbanpop": "8700275.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Curacao",
+        "countrycode": "CUW",
+        "totalpop": "152369.0",
+        "netmigration": "502.0",
+        "ruralpop": "16703.0",
+        "urbanpop": "135666.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Cyprus",
+        "countrycode": "CYP",
+        "totalpop": "1244188.0",
+        "netmigration": "1995.0",
+        "ruralpop": "412374.0",
+        "urbanpop": "831814.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Czechia",
+        "countrycode": "CZE",
+        "totalpop": "10505772.0",
+        "netmigration": "3621.0",
+        "ruralpop": "2709018.0",
+        "urbanpop": "7796754.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Denmark",
+        "countrycode": "DNK",
+        "totalpop": "5856733.0",
+        "netmigration": "22746.0",
+        "ruralpop": "688752.0",
+        "urbanpop": "5167981.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Djibouti",
+        "countrycode": "DJI",
+        "totalpop": "1105557.0",
+        "netmigration": "742.0",
+        "ruralpop": "240823.0",
+        "urbanpop": "864734.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Dominica",
+        "countrycode": "DMA",
+        "totalpop": "72412.0",
+        "netmigration": "57.0",
+        "ruralpop": "20713.0",
+        "urbanpop": "51699.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Dominican Republic",
+        "countrycode": "DOM",
+        "totalpop": "11117873.0",
+        "netmigration": "-14966.0",
+        "ruralpop": "1866357.0",
+        "urbanpop": "9251516.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Ecuador",
+        "countrycode": "ECU",
+        "totalpop": "17797737.0",
+        "netmigration": "35894.0",
+        "ruralpop": "6342935.0",
+        "urbanpop": "11454802.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Egypt, Arab Rep.",
+        "countrycode": "EGY",
+        "totalpop": "109262178.0",
+        "netmigration": "-32370.0",
+        "ruralpop": "62430223.0",
+        "urbanpop": "46831955.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "El Salvador",
+        "countrycode": "SLV",
+        "totalpop": "6314167.0",
+        "netmigration": "-27343.0",
+        "ruralpop": "1634233.0",
+        "urbanpop": "4679934.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Equatorial Guinea",
+        "countrycode": "GNQ",
+        "totalpop": "1634466.0",
+        "netmigration": "6486.0",
+        "ruralpop": "432136.0",
+        "urbanpop": "1202330.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Eritrea",
+        "countrycode": "ERI",
+        "totalpop": "3620312.0",
+        "netmigration": "-14988.0",
+        "ruralpop": "2100324.0",
+        "urbanpop": "1519988.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Estonia",
+        "countrycode": "EST",
+        "totalpop": "1330932.0",
+        "netmigration": "2995.0",
+        "ruralpop": "407066.0",
+        "urbanpop": "923866.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Eswatini",
+        "countrycode": "SWZ",
+        "totalpop": "1192271.0",
+        "netmigration": "-4897.0",
+        "ruralpop": "901726.0",
+        "urbanpop": "290545.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Ethiopia",
+        "countrycode": "ETH",
+        "totalpop": "120283026.0",
+        "netmigration": "-1391.0",
+        "ruralpop": "93611468.0",
+        "urbanpop": "26671558.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Faroe Islands",
+        "countrycode": "FRO",
+        "totalpop": "52889.0",
+        "netmigration": "0.0",
+        "ruralpop": "30367.0",
+        "urbanpop": "22522.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Fiji",
+        "countrycode": "FJI",
+        "totalpop": "924610.0",
+        "netmigration": "-6003.0",
+        "ruralpop": "390740.0",
+        "urbanpop": "533870.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Finland",
+        "countrycode": "FIN",
+        "totalpop": "5541017.0",
+        "netmigration": "14928.0",
+        "ruralpop": "798128.0",
+        "urbanpop": "4742889.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "France",
+        "countrycode": "FRA",
+        "totalpop": "67764304.0",
+        "netmigration": "20614.0",
+        "ruralpop": "12711228.0",
+        "urbanpop": "55053076.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "French Polynesia",
+        "countrycode": "PYF",
+        "totalpop": "304032.0",
+        "netmigration": "-378.0",
+        "ruralpop": "115331.0",
+        "urbanpop": "188701.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Gabon",
+        "countrycode": "GAB",
+        "totalpop": "2341179.0",
+        "netmigration": "1516.0",
+        "ruralpop": "224215.0",
+        "urbanpop": "2116964.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Gambia, The",
+        "countrycode": "GMB",
+        "totalpop": "2639916.0",
+        "netmigration": "-1960.0",
+        "ruralpop": "970908.0",
+        "urbanpop": "1669008.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Georgia",
+        "countrycode": "GEO",
+        "totalpop": "3708610.0",
+        "netmigration": "-2734.0",
+        "ruralpop": "1488191.0",
+        "urbanpop": "2220419.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Germany",
+        "countrycode": "DEU",
+        "totalpop": "83196078.0",
+        "netmigration": "312735.0",
+        "ruralpop": "18682511.0",
+        "urbanpop": "64513567.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Ghana",
+        "countrycode": "GHA",
+        "totalpop": "32833031.0",
+        "netmigration": "-11253.0",
+        "ruralpop": "13794798.0",
+        "urbanpop": "19038233.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Gibraltar",
+        "countrycode": "GIB",
+        "totalpop": "32669.0",
+        "netmigration": "-58.0",
+        "ruralpop": "0.0",
+        "urbanpop": "32669.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Greece",
+        "countrycode": "GRC",
+        "totalpop": "10569207.0",
+        "netmigration": "-14806.0",
+        "ruralpop": "2109825.0",
+        "urbanpop": "8459382.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Greenland",
+        "countrycode": "GRL",
+        "totalpop": "56653.0",
+        "netmigration": "-62.0",
+        "ruralpop": "7078.0",
+        "urbanpop": "49575.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Grenada",
+        "countrycode": "GRD",
+        "totalpop": "124610.0",
+        "netmigration": "-85.0",
+        "ruralpop": "78886.0",
+        "urbanpop": "45724.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Guam",
+        "countrycode": "GUM",
+        "totalpop": "170534.0",
+        "netmigration": "-244.0",
+        "ruralpop": "8501.0",
+        "urbanpop": "162033.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Guatemala",
+        "countrycode": "GTM",
+        "totalpop": "17109746.0",
+        "netmigration": "-29118.0",
+        "ruralpop": "8170759.0",
+        "urbanpop": "8938987.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Guinea",
+        "countrycode": "GIN",
+        "totalpop": "13531906.0",
+        "netmigration": "-4367.0",
+        "ruralpop": "8489377.0",
+        "urbanpop": "5042529.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Guinea-Bissau",
+        "countrycode": "GNB",
+        "totalpop": "2060721.0",
+        "netmigration": "-1395.0",
+        "ruralpop": "1141289.0",
+        "urbanpop": "919432.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Guyana",
+        "countrycode": "GUY",
+        "totalpop": "804567.0",
+        "netmigration": "-4316.0",
+        "ruralpop": "588163.0",
+        "urbanpop": "216404.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Haiti",
+        "countrycode": "HTI",
+        "totalpop": "11447569.0",
+        "netmigration": "-32977.0",
+        "ruralpop": "4812100.0",
+        "urbanpop": "6635469.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Honduras",
+        "countrycode": "HND",
+        "totalpop": "10278345.0",
+        "netmigration": "-5779.0",
+        "ruralpop": "4215972.0",
+        "urbanpop": "6062373.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Hong Kong SAR, China",
+        "countrycode": "HKG",
+        "totalpop": "7413100.0",
+        "netmigration": "0.0",
+        "ruralpop": "0.0",
+        "urbanpop": "7413100.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Hungary",
+        "countrycode": "HUN",
+        "totalpop": "9709891.0",
+        "netmigration": "19870.0",
+        "ruralpop": "2694980.0",
+        "urbanpop": "7014911.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Iceland",
+        "countrycode": "ISL",
+        "totalpop": "372520.0",
+        "netmigration": "622.0",
+        "ruralpop": "22560.0",
+        "urbanpop": "349960.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "India",
+        "countrycode": "IND",
+        "totalpop": "1407563842.0",
+        "netmigration": "-301970.0",
+        "ruralpop": "909384771.0",
+        "urbanpop": "498179071.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Indonesia",
+        "countrycode": "IDN",
+        "totalpop": "273753191.0",
+        "netmigration": "-14992.0",
+        "ruralpop": "116919988.0",
+        "urbanpop": "156833203.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Iran, Islamic Rep.",
+        "countrycode": "IRN",
+        "totalpop": "87923432.0",
+        "netmigration": "28080.0",
+        "ruralpop": "20798288.0",
+        "urbanpop": "67125144.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Iraq",
+        "countrycode": "IRQ",
+        "totalpop": "43533592.0",
+        "netmigration": "-60097.0",
+        "ruralpop": "12572937.0",
+        "urbanpop": "30960655.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Ireland",
+        "countrycode": "IRL",
+        "totalpop": "5033164.0",
+        "netmigration": "15320.0",
+        "ruralpop": "1816368.0",
+        "urbanpop": "3216796.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Isle of Man",
+        "countrycode": "IMN",
+        "totalpop": "84263.0",
+        "netmigration": "517.0",
+        "ruralpop": "39540.0",
+        "urbanpop": "44723.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Israel",
+        "countrycode": "ISR",
+        "totalpop": "9371400.0",
+        "netmigration": "16856.0",
+        "ruralpop": "686549.0",
+        "urbanpop": "8684851.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Italy",
+        "countrycode": "ITA",
+        "totalpop": "59133173.0",
+        "netmigration": "28021.0",
+        "ruralpop": "16944019.0",
+        "urbanpop": "42189154.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Jamaica",
+        "countrycode": "JAM",
+        "totalpop": "2827695.0",
+        "netmigration": "-5664.0",
+        "ruralpop": "1225749.0",
+        "urbanpop": "1601946.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Japan",
+        "countrycode": "JPN",
+        "totalpop": "125681593.0",
+        "netmigration": "87584.0",
+        "ruralpop": "10221684.0",
+        "urbanpop": "115459909.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Jordan",
+        "countrycode": "JOR",
+        "totalpop": "11148278.0",
+        "netmigration": "14374.0",
+        "ruralpop": "933557.0",
+        "urbanpop": "10214721.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Kazakhstan",
+        "countrycode": "KAZ",
+        "totalpop": "19000988.0",
+        "netmigration": "-18917.0",
+        "ruralpop": "8014427.0",
+        "urbanpop": "10986561.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Kenya",
+        "countrycode": "KEN",
+        "totalpop": "53005614.0",
+        "netmigration": "-52549.0",
+        "ruralpop": "37902724.0",
+        "urbanpop": "15102890.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Kiribati",
+        "countrycode": "KIR",
+        "totalpop": "128874.0",
+        "netmigration": "-296.0",
+        "ruralpop": "56273.0",
+        "urbanpop": "72601.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Korea, Dem. People's Rep.",
+        "countrycode": "PRK",
+        "totalpop": "25971909.0",
+        "netmigration": "-1589.0",
+        "ruralpop": "9702586.0",
+        "urbanpop": "16269323.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Korea, Rep.",
+        "countrycode": "KOR",
+        "totalpop": "51744876.0",
+        "netmigration": "43440.0",
+        "ruralpop": "9617303.0",
+        "urbanpop": "42127573.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Kosovo",
+        "countrycode": "XKX",
+        "totalpop": "1786038.0",
+        "netmigration": "-15050.0",
+        "ruralpop": "",
+        "urbanpop": ""
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Kuwait",
+        "countrycode": "KWT",
+        "totalpop": "4250114.0",
+        "netmigration": "-36843.0",
+        "ruralpop": "0.0",
+        "urbanpop": "4250114.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Kyrgyz Republic",
+        "countrycode": "KGZ",
+        "totalpop": "6773400.0",
+        "netmigration": "-16510.0",
+        "ruralpop": "4257353.0",
+        "urbanpop": "2516047.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Lao PDR",
+        "countrycode": "LAO",
+        "totalpop": "7425057.0",
+        "netmigration": "-10303.0",
+        "ruralpop": "4682315.0",
+        "urbanpop": "2742742.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Latvia",
+        "countrycode": "LVA",
+        "totalpop": "1884490.0",
+        "netmigration": "-6815.0",
+        "ruralpop": "595103.0",
+        "urbanpop": "1289387.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Lebanon",
+        "countrycode": "LBN",
+        "totalpop": "5592631.0",
+        "netmigration": "-115122.0",
+        "ruralpop": "609988.0",
+        "urbanpop": "4982643.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Lesotho",
+        "countrycode": "LSO",
+        "totalpop": "2281454.0",
+        "netmigration": "-1490.0",
+        "ruralpop": "1608881.0",
+        "urbanpop": "672573.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Liberia",
+        "countrycode": "LBR",
+        "totalpop": "5193416.0",
+        "netmigration": "-11862.0",
+        "ruralpop": "2463081.0",
+        "urbanpop": "2730335.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Libya",
+        "countrycode": "LBY",
+        "totalpop": "6735277.0",
+        "netmigration": "-696.0",
+        "ruralpop": "1280107.0",
+        "urbanpop": "5455170.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Liechtenstein",
+        "countrycode": "LIE",
+        "totalpop": "39039.0",
+        "netmigration": "231.0",
+        "ruralpop": "33390.0",
+        "urbanpop": "5649.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Lithuania",
+        "countrycode": "LTU",
+        "totalpop": "2800839.0",
+        "netmigration": "-11853.0",
+        "ruralpop": "889294.0",
+        "urbanpop": "1911545.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Luxembourg",
+        "countrycode": "LUX",
+        "totalpop": "640064.0",
+        "netmigration": "6949.0",
+        "ruralpop": "53305.0",
+        "urbanpop": "586759.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Macao SAR, China",
+        "countrycode": "MAC",
+        "totalpop": "686607.0",
+        "netmigration": "4004.0",
+        "ruralpop": "0.0",
+        "urbanpop": "686607.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Madagascar",
+        "countrycode": "MDG",
+        "totalpop": "28915653.0",
+        "netmigration": "-742.0",
+        "ruralpop": "17578693.0",
+        "urbanpop": "11336960.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Malawi",
+        "countrycode": "MWI",
+        "totalpop": "19889742.0",
+        "netmigration": "-1775.0",
+        "ruralpop": "16370252.0",
+        "urbanpop": "3519490.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Malaysia",
+        "countrycode": "MYS",
+        "totalpop": "33573874.0",
+        "netmigration": "46165.0",
+        "ruralpop": "7488317.0",
+        "urbanpop": "26085557.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Maldives",
+        "countrycode": "MDV",
+        "totalpop": "521457.0",
+        "netmigration": "1189.0",
+        "ruralpop": "307128.0",
+        "urbanpop": "214329.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Mali",
+        "countrycode": "MLI",
+        "totalpop": "21904983.0",
+        "netmigration": "-22236.0",
+        "ruralpop": "12118494.0",
+        "urbanpop": "9786489.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Malta",
+        "countrycode": "MLT",
+        "totalpop": "518536.0",
+        "netmigration": "10408.0",
+        "ruralpop": "26912.0",
+        "urbanpop": "491624.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Marshall Islands",
+        "countrycode": "MHL",
+        "totalpop": "42050.0",
+        "netmigration": "-1901.0",
+        "ruralpop": "9183.0",
+        "urbanpop": "32867.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Mauritania",
+        "countrycode": "MRT",
+        "totalpop": "4614974.0",
+        "netmigration": "-1494.0",
+        "ruralpop": "2024451.0",
+        "urbanpop": "2590523.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Mauritius",
+        "countrycode": "MUS",
+        "totalpop": "1266334.0",
+        "netmigration": "-478.0",
+        "ruralpop": "749986.0",
+        "urbanpop": "516348.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Mexico",
+        "countrycode": "MEX",
+        "totalpop": "126705138.0",
+        "netmigration": "-52649.0",
+        "ruralpop": "24053703.0",
+        "urbanpop": "102651435.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Micronesia, Fed. Sts.",
+        "countrycode": "FSM",
+        "totalpop": "113131.0",
+        "netmigration": "-635.0",
+        "ruralpop": "87034.0",
+        "urbanpop": "26097.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Moldova",
+        "countrycode": "MDA",
+        "totalpop": "2595809.0",
+        "netmigration": "-14278.0",
+        "ruralpop": "1479663.0",
+        "urbanpop": "1116146.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Monaco",
+        "countrycode": "MCO",
+        "totalpop": "36686.0",
+        "netmigration": "206.0",
+        "ruralpop": "0.0",
+        "urbanpop": "36686.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Mongolia",
+        "countrycode": "MNG",
+        "totalpop": "3347782.0",
+        "netmigration": "0.0",
+        "ruralpop": "1045010.0",
+        "urbanpop": "2302772.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Montenegro",
+        "countrycode": "MNE",
+        "totalpop": "619211.0",
+        "netmigration": "-101.0",
+        "ruralpop": "199225.0",
+        "urbanpop": "419986.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Morocco",
+        "countrycode": "MAR",
+        "totalpop": "37076584.0",
+        "netmigration": "-46242.0",
+        "ruralpop": "13323470.0",
+        "urbanpop": "23753114.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Mozambique",
+        "countrycode": "MOZ",
+        "totalpop": "32077072.0",
+        "netmigration": "-9515.0",
+        "ruralpop": "20007111.0",
+        "urbanpop": "12069961.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Myanmar",
+        "countrycode": "MMR",
+        "totalpop": "53798084.0",
+        "netmigration": "-35382.0",
+        "ruralpop": "36879663.0",
+        "urbanpop": "16918421.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Namibia",
+        "countrycode": "NAM",
+        "totalpop": "2530151.0",
+        "netmigration": "-4301.0",
+        "ruralpop": "1189044.0",
+        "urbanpop": "1341107.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Nauru",
+        "countrycode": "NRU",
+        "totalpop": "12511.0",
+        "netmigration": "-66.0",
+        "ruralpop": "0.0",
+        "urbanpop": "12511.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Nepal",
+        "countrycode": "NPL",
+        "totalpop": "30034989.0",
+        "netmigration": "296541.0",
+        "ruralpop": "23725239.0",
+        "urbanpop": "6309750.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Netherlands",
+        "countrycode": "NLD",
+        "totalpop": "17533044.0",
+        "netmigration": "57439.0",
+        "ruralpop": "1302355.0",
+        "urbanpop": "16230689.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "New Caledonia",
+        "countrycode": "NCL",
+        "totalpop": "270390.0",
+        "netmigration": "-1182.0",
+        "ruralpop": "75912.0",
+        "urbanpop": "194478.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "New Zealand",
+        "countrycode": "NZL",
+        "totalpop": "5111400.0",
+        "netmigration": "38220.0",
+        "ruralpop": "675267.0",
+        "urbanpop": "4436133.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Nicaragua",
+        "countrycode": "NIC",
+        "totalpop": "6850540.0",
+        "netmigration": "-10384.0",
+        "ruralpop": "2789745.0",
+        "urbanpop": "4060795.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Niger",
+        "countrycode": "NER",
+        "totalpop": "25252722.0",
+        "netmigration": "-4405.0",
+        "ruralpop": "21022639.0",
+        "urbanpop": "4230083.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Nigeria",
+        "countrycode": "NGA",
+        "totalpop": "213401323.0",
+        "netmigration": "-76364.0",
+        "ruralpop": "100840661.0",
+        "urbanpop": "112560662.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "North Macedonia",
+        "countrycode": "MKD",
+        "totalpop": "2065092.0",
+        "netmigration": "-486.0",
+        "ruralpop": "851107.0",
+        "urbanpop": "1213985.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Northern Mariana Islands",
+        "countrycode": "MNP",
+        "totalpop": "49481.0",
+        "netmigration": "-431.0",
+        "ruralpop": "4013.0",
+        "urbanpop": "45468.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Norway",
+        "countrycode": "NOR",
+        "totalpop": "5408320.0",
+        "netmigration": "10604.0",
+        "ruralpop": "901946.0",
+        "urbanpop": "4506374.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Oman",
+        "countrycode": "OMN",
+        "totalpop": "4520471.0",
+        "netmigration": "-20664.0",
+        "ruralpop": "585672.0",
+        "urbanpop": "3934799.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Pakistan",
+        "countrycode": "PAK",
+        "totalpop": "231402117.0",
+        "netmigration": "-471395.0",
+        "ruralpop": "144765164.0",
+        "urbanpop": "86636953.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Palau",
+        "countrycode": "PLW",
+        "totalpop": "18024.0",
+        "netmigration": "3.0",
+        "ruralpop": "3338.0",
+        "urbanpop": "14686.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Panama",
+        "countrycode": "PAN",
+        "totalpop": "4351267.0",
+        "netmigration": "5473.0",
+        "ruralpop": "1358683.0",
+        "urbanpop": "2992584.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Papua New Guinea",
+        "countrycode": "PNG",
+        "totalpop": "9949437.0",
+        "netmigration": "10695.0",
+        "ruralpop": "8610641.0",
+        "urbanpop": "1338796.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Paraguay",
+        "countrycode": "PRY",
+        "totalpop": "6703799.0",
+        "netmigration": "-8230.0",
+        "ruralpop": "2514193.0",
+        "urbanpop": "4189606.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Peru",
+        "countrycode": "PER",
+        "totalpop": "33715471.0",
+        "netmigration": "68012.0",
+        "ruralpop": "7248826.0",
+        "urbanpop": "26466645.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Philippines",
+        "countrycode": "PHL",
+        "totalpop": "113880328.0",
+        "netmigration": "-80125.0",
+        "ruralpop": "59577632.0",
+        "urbanpop": "54302696.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Poland",
+        "countrycode": "POL",
+        "totalpop": "37747124.0",
+        "netmigration": "-2968.0",
+        "ruralpop": "15070539.0",
+        "urbanpop": "22676585.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Portugal",
+        "countrycode": "PRT",
+        "totalpop": "10361831.0",
+        "netmigration": "27295.0",
+        "ruralpop": "3435051.0",
+        "urbanpop": "6926780.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Puerto Rico",
+        "countrycode": "PRI",
+        "totalpop": "3262693.0",
+        "netmigration": "-7408.0",
+        "ruralpop": "209073.0",
+        "urbanpop": "3053620.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Qatar",
+        "countrycode": "QAT",
+        "totalpop": "2688235.0",
+        "netmigration": "-30801.0",
+        "ruralpop": "19409.0",
+        "urbanpop": "2668826.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Romania",
+        "countrycode": "ROU",
+        "totalpop": "19122059.0",
+        "netmigration": "-12724.0",
+        "ruralpop": "8733236.0",
+        "urbanpop": "10388823.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Russian Federation",
+        "countrycode": "RUS",
+        "totalpop": "144130482.0",
+        "netmigration": "320617.0",
+        "ruralpop": "36127747.0",
+        "urbanpop": "108002735.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Rwanda",
+        "countrycode": "RWA",
+        "totalpop": "13461888.0",
+        "netmigration": "-6112.0",
+        "ruralpop": "11096904.0",
+        "urbanpop": "2364984.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Samoa",
+        "countrycode": "WSM",
+        "totalpop": "218764.0",
+        "netmigration": "-882.0",
+        "ruralpop": "179951.0",
+        "urbanpop": "38813.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "San Marino",
+        "countrycode": "SMR",
+        "totalpop": "33745.0",
+        "netmigration": "41.0",
+        "ruralpop": "803.0",
+        "urbanpop": "32942.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Sao Tome and Principe",
+        "countrycode": "STP",
+        "totalpop": "223107.0",
+        "netmigration": "-792.0",
+        "ruralpop": "55614.0",
+        "urbanpop": "167493.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Saudi Arabia",
+        "countrycode": "SAU",
+        "totalpop": "35950396.0",
+        "netmigration": "-153883.0",
+        "ruralpop": "5569435.0",
+        "urbanpop": "30380961.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Senegal",
+        "countrycode": "SEN",
+        "totalpop": "16876720.0",
+        "netmigration": "-10091.0",
+        "ruralpop": "8674634.0",
+        "urbanpop": "8202086.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Serbia",
+        "countrycode": "SRB",
+        "totalpop": "6834326.0",
+        "netmigration": "243.0",
+        "ruralpop": "2962612.0",
+        "urbanpop": "3871714.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Seychelles",
+        "countrycode": "SYC",
+        "totalpop": "99258.0",
+        "netmigration": "146.0",
+        "ruralpop": "41716.0",
+        "urbanpop": "57542.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Sierra Leone",
+        "countrycode": "SLE",
+        "totalpop": "8420641.0",
+        "netmigration": "-1544.0",
+        "ruralpop": "4768441.0",
+        "urbanpop": "3652200.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Singapore",
+        "countrycode": "SGP",
+        "totalpop": "5453566.0",
+        "netmigration": "19321.0",
+        "ruralpop": "0.0",
+        "urbanpop": "5453566.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Sint Maarten (Dutch part)",
+        "countrycode": "SXM",
+        "totalpop": "42668.0",
+        "netmigration": "212.0",
+        "ruralpop": "0.0",
+        "urbanpop": "42668.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Slovak Republic",
+        "countrycode": "SVK",
+        "totalpop": "5447247.0",
+        "netmigration": "1746.0",
+        "ruralpop": "2515539.0",
+        "urbanpop": "2931708.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Slovenia",
+        "countrycode": "SVN",
+        "totalpop": "2108079.0",
+        "netmigration": "4568.0",
+        "ruralpop": "939634.0",
+        "urbanpop": "1168445.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Solomon Islands",
+        "countrycode": "SLB",
+        "totalpop": "707851.0",
+        "netmigration": "-808.0",
+        "ruralpop": "529982.0",
+        "urbanpop": "177869.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Somalia",
+        "countrycode": "SOM",
+        "totalpop": "17065581.0",
+        "netmigration": "-17071.0",
+        "ruralpop": "9090664.0",
+        "urbanpop": "7974917.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "South Africa",
+        "countrycode": "ZAF",
+        "totalpop": "59392255.0",
+        "netmigration": "10934.0",
+        "ruralpop": "19096392.0",
+        "urbanpop": "40295863.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "South Sudan",
+        "countrycode": "SSD",
+        "totalpop": "10748272.0",
+        "netmigration": "-31885.0",
+        "ruralpop": "8543371.0",
+        "urbanpop": "2204901.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Spain",
+        "countrycode": "ESP",
+        "totalpop": "47415794.0",
+        "netmigration": "275022.0",
+        "ruralpop": "8982448.0",
+        "urbanpop": "38433346.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Sri Lanka",
+        "countrycode": "LKA",
+        "totalpop": "22156000.0",
+        "netmigration": "-92400.0",
+        "ruralpop": "17977378.0",
+        "urbanpop": "4178622.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "St. Kitts and Nevis",
+        "countrycode": "KNA",
+        "totalpop": "47606.0",
+        "netmigration": "-90.0",
+        "ruralpop": "32893.0",
+        "urbanpop": "14713.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "St. Lucia",
+        "countrycode": "LCA",
+        "totalpop": "179651.0",
+        "netmigration": "0.0",
+        "ruralpop": "145625.0",
+        "urbanpop": "34026.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "St. Martin (French part)",
+        "countrycode": "MAF",
+        "totalpop": "31948.0",
+        "netmigration": "-948.0",
+        "ruralpop": "",
+        "urbanpop": ""
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "St. Vincent and the Grenadines",
+        "countrycode": "VCT",
+        "totalpop": "104332.0",
+        "netmigration": "-379.0",
+        "ruralpop": "48564.0",
+        "urbanpop": "55768.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Sudan",
+        "countrycode": "SDN",
+        "totalpop": "45657202.0",
+        "netmigration": "-15223.0",
+        "ruralpop": "29406434.0",
+        "urbanpop": "16250768.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Suriname",
+        "countrycode": "SUR",
+        "totalpop": "612985.0",
+        "netmigration": "-492.0",
+        "ruralpop": "207072.0",
+        "urbanpop": "405913.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Sweden",
+        "countrycode": "SWE",
+        "totalpop": "10415811.0",
+        "netmigration": "80097.0",
+        "ruralpop": "1225108.0",
+        "urbanpop": "9190703.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Switzerland",
+        "countrycode": "CHE",
+        "totalpop": "8704546.0",
+        "netmigration": "23872.0",
+        "ruralpop": "2263530.0",
+        "urbanpop": "6441016.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Syrian Arab Republic",
+        "countrycode": "SYR",
+        "totalpop": "21324367.0",
+        "netmigration": "212187.0",
+        "ruralpop": "9356279.0",
+        "urbanpop": "11968088.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Tajikistan",
+        "countrycode": "TJK",
+        "totalpop": "9750064.0",
+        "netmigration": "-3564.0",
+        "ruralpop": "7046761.0",
+        "urbanpop": "2703303.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Tanzania",
+        "countrycode": "TZA",
+        "totalpop": "63588334.0",
+        "netmigration": "-4865.0",
+        "ruralpop": "40725784.0",
+        "urbanpop": "22862550.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Thailand",
+        "countrycode": "THA",
+        "totalpop": "71601103.0",
+        "netmigration": "1133.0",
+        "ruralpop": "34251820.0",
+        "urbanpop": "37349283.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Timor-Leste",
+        "countrycode": "TLS",
+        "totalpop": "1320942.0",
+        "netmigration": "-1997.0",
+        "ruralpop": "902269.0",
+        "urbanpop": "418673.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Togo",
+        "countrycode": "TGO",
+        "totalpop": "8644829.0",
+        "netmigration": "-995.0",
+        "ruralpop": "4896604.0",
+        "urbanpop": "3748225.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Tonga",
+        "countrycode": "TON",
+        "totalpop": "106017.0",
+        "netmigration": "-948.0",
+        "ruralpop": "81523.0",
+        "urbanpop": "24494.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Trinidad and Tobago",
+        "countrycode": "TTO",
+        "totalpop": "1525663.0",
+        "netmigration": "2632.0",
+        "ruralpop": "713019.0",
+        "urbanpop": "812644.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Tunisia",
+        "countrycode": "TUN",
+        "totalpop": "12262946.0",
+        "netmigration": "-9189.0",
+        "ruralpop": "3692618.0",
+        "urbanpop": "8570328.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Turkiye",
+        "countrycode": "TUR",
+        "totalpop": "84147318.0",
+        "netmigration": "-69729.0",
+        "ruralpop": "19716558.0",
+        "urbanpop": "64430760.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Turkmenistan",
+        "countrycode": "TKM",
+        "totalpop": "6341855.0",
+        "netmigration": "-4503.0",
+        "ruralpop": "2980799.0",
+        "urbanpop": "3361056.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Turks and Caicos Islands",
+        "countrycode": "TCA",
+        "totalpop": "45114.0",
+        "netmigration": "682.0",
+        "ruralpop": "2782.0",
+        "urbanpop": "42332.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Tuvalu",
+        "countrycode": "TUV",
+        "totalpop": "11204.0",
+        "netmigration": "-15.0",
+        "ruralpop": "3945.0",
+        "urbanpop": "7259.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Uganda",
+        "countrycode": "UGA",
+        "totalpop": "45853778.0",
+        "netmigration": "43465.0",
+        "ruralpop": "34136762.0",
+        "urbanpop": "11717016.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Ukraine",
+        "countrycode": "UKR",
+        "totalpop": "43822901.0",
+        "netmigration": "831.0",
+        "ruralpop": "13253360.0",
+        "urbanpop": "30569541.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "United Arab Emirates",
+        "countrycode": "ARE",
+        "totalpop": "9365145.0",
+        "netmigration": "-2762.0",
+        "ruralpop": "1189467.0",
+        "urbanpop": "8175678.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "United Kingdom",
+        "countrycode": "GBR",
+        "totalpop": "67026292.0",
+        "netmigration": "202027.0",
+        "ruralpop": "10622327.0",
+        "urbanpop": "56403965.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "United States",
+        "countrycode": "USA",
+        "totalpop": "332031554.0",
+        "netmigration": "561580.0",
+        "ruralpop": "56867044.0",
+        "urbanpop": "275164510.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Uruguay",
+        "countrycode": "URY",
+        "totalpop": "3426260.0",
+        "netmigration": "-1486.0",
+        "ruralpop": "150653.0",
+        "urbanpop": "3275607.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Uzbekistan",
+        "countrycode": "UZB",
+        "totalpop": "34915100.0",
+        "netmigration": "-39201.0",
+        "ruralpop": "17308463.0",
+        "urbanpop": "17606637.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Vanuatu",
+        "countrycode": "VUT",
+        "totalpop": "319137.0",
+        "netmigration": "-197.0",
+        "ruralpop": "237230.0",
+        "urbanpop": "81907.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Venezuela, RB",
+        "countrycode": "VEN",
+        "totalpop": "28199867.0",
+        "netmigration": "-525116.0",
+        "ruralpop": "3292334.0",
+        "urbanpop": "24907533.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Viet Nam",
+        "countrycode": "VNM",
+        "totalpop": "97468029.0",
+        "netmigration": "-992.0",
+        "ruralpop": "60379495.0",
+        "urbanpop": "37088534.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Virgin Islands (U.S.)",
+        "countrycode": "VIR",
+        "totalpop": "105870.0",
+        "netmigration": "-224.0",
+        "ruralpop": "4192.0",
+        "urbanpop": "101678.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "West Bank and Gaza",
+        "countrycode": "PSE",
+        "totalpop": "4922749.0",
+        "netmigration": "-12369.0",
+        "ruralpop": "1132085.0",
+        "urbanpop": "3790664.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Yemen, Rep.",
+        "countrycode": "YEM",
+        "totalpop": "32981641.0",
+        "netmigration": "-101468.0",
+        "ruralpop": "20268538.0",
+        "urbanpop": "12713103.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Zambia",
+        "countrycode": "ZMB",
+        "totalpop": "19473125.0",
+        "netmigration": "9015.0",
+        "ruralpop": "10672830.0",
+        "urbanpop": "8800295.0"
+    },
+    {
+        "yearcode": "YR2021",
+        "countryname": "Zimbabwe",
+        "countrycode": "ZWE",
+        "totalpop": "15993524.0",
+        "netmigration": "-25005.0",
+        "ruralpop": "10827136.0",
+        "urbanpop": "5166388.0"
+    }
+]
