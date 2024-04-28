@@ -26,23 +26,25 @@ const playerMarker = leaflet.marker(playerPos);
 let currentFilter: "covid" | "population" = "covid";
 let geojson: leaflet.GeoJSON;
 
-let covidStats: CountryStats[] = [];
+let covidData: CovidData[] = [];
 let populationData: PopulationData[] = [];
 
 // custom data types -----------------------------------------------------------------------------------------------------
 
-interface CountryData {
+interface CovidData {
+  countryCode: string;
   confirmed: number;
   deaths: number;
   recovered: number;
+  fatalityRate: number;
 }
 
-type CountryStats = Record<string, CountryData>;
+type CovidCountryRecord = Record<string, CovidData>;
 
-interface CovidData {
+interface DataResponse {
   count: number;
   date: string;
-  result: CountryStats[];
+  result: CovidCountryRecord[];
 }
 
 interface PopulationData {
@@ -110,7 +112,7 @@ filterButton.addEventListener("touchstart", (e) => {
 });
 
 // covid data -----------------------------------------------------------------------------------------------------
-async function fetchCovidData(): Promise<CovidData> {
+async function fetchCovidData(): Promise<CovidData[]> {
   const response = await fetch(
     "https://raw.githubusercontent.com/aguizaro/MapDataVisualizer/main/resources/covid.json"
   );
@@ -118,8 +120,20 @@ async function fetchCovidData(): Promise<CovidData> {
   if (!response.ok) {
     throw new Error("Failed to fetch covid data");
   }
-  const data = (await response.json()) as CovidData;
-  return data;
+  const data = (await response.json()) as DataResponse;
+  const dataArray = data.result;
+  const parsedData = dataArray.map((item) => {
+    const key = Object.keys(item)[0];
+    return {
+      countryCode: key,
+      confirmed: item[key].confirmed,
+      deaths: item[key].deaths,
+      recovered: item[key].recovered,
+      fatalityRate: item[key].deaths / item[key].confirmed,
+    } as CovidData;
+  });
+
+  return parsedData;
 }
 
 async function fetchPoplationData(): Promise<PopulationData[]> {
@@ -172,25 +186,25 @@ async function updateMap() {
   }
 }
 
-function calculateCovidColor(data: CountryData): string {
+function calculateCovidColor(
+  covData: CovidData,
+  popData: PopulationData
+): string {
   //country data is not this
-  if (data === undefined) {
+  if (covData === undefined || popData === undefined) {
     return "clear";
   }
-  const deaths = data.deaths;
-  const confirmed = data.confirmed;
-  const deathsPerConfirmed = deaths / confirmed;
-
+  const infectionRate = covData.confirmed / popData.totalpop;
   let color = "";
-  if (deathsPerConfirmed < 0.01) {
+  if (infectionRate < 0.005) {
     color = "#fff33b";
-  } else if (deathsPerConfirmed < 0.02) {
+  } else if (infectionRate < 0.01) {
     color = "#fdc70c";
-  } else if (deathsPerConfirmed < 0.03) {
+  } else if (infectionRate < 0.05) {
     color = "#f3903f";
-  } else if (deathsPerConfirmed < 0.4) {
+  } else if (infectionRate < 0.1) {
     color = "#ed683c";
-  } else if (deathsPerConfirmed < 0.5) {
+  } else if (infectionRate < 0.21) {
     color = "#e93e3a";
   }
   return color;
@@ -249,9 +263,10 @@ function toggleFilter() {
 }
 
 function applyColorToLayer(layer: leaflet.Layer, countryCode: string) {
-  const covidData = covidStats.find((entry) => {
-    return Object.keys(entry)[0] === countryCode;
-  });
+  const countryCovidData = covidData.find((entry: CovidData) => {
+    return entry.countryCode === countryCode;
+  })!;
+
   const popData = populationData.find((entry) => {
     return entry.countrycode === countryCode;
   });
@@ -259,8 +274,8 @@ function applyColorToLayer(layer: leaflet.Layer, countryCode: string) {
   // set color based on covid data
   const pathLayer = layer as leaflet.Path;
   let fillColor = ""; //empty string uses default color
-  if (currentFilter === "covid" && covidData && countryCode) {
-    fillColor = calculateCovidColor(covidData[countryCode]);
+  if (currentFilter === "covid" && countryCovidData && popData && countryCode) {
+    fillColor = calculateCovidColor(countryCovidData, popData);
   } else if (currentFilter === "population" && popData && countryCode) {
     fillColor = calculatePopulationColor(popData);
   }
@@ -281,12 +296,12 @@ function toggleLegend() {
   legend = new Control({ position: "bottomleft" });
   legendTitle = DomUtil.create("h4", "legend-title");
   if (currentFilter === "covid") {
-    legendTitle.innerText = "COVID-19 Fatality Rate";
+    legendTitle.innerText = "COVID-19 Infeciton Rate";
 
     legend.onAdd = () => {
       const div = DomUtil.create("div", "legend");
       div.appendChild(legendTitle);
-      const grades = [1, 2, 3, 4, 5];
+      const grades = [0.5, 1, 5, 10, 20];
       const colors = ["#fff33b", "#fdc70c", "#f3903f", "#ed683c", "#e93e3a"];
 
       for (let i = 0; i < grades.length; i++) {
@@ -314,63 +329,55 @@ function toggleLegend() {
 }
 
 function createToolTipContent(targetLayer: leaflet.FeatureGroup) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const covidData = covidStats.find((entry: any) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    return Object.keys(entry)[0] === (targetLayer.feature! as Feature).id;
+  const countryCovidData = covidData.find((entry: CovidData) => {
+    return entry.countryCode === (targetLayer.feature! as Feature).id;
   })!;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const popData = populationData.find((entry: any) => {
+  const countryPopData = populationData.find((entry: any) => {
     return entry.countrycode === (targetLayer.feature! as Feature).id;
   })!;
 
   // display country data as tooltip
   let tooltipContent;
   if (currentFilter == "covid") {
-    if (
-      (targetLayer.feature! as Feature).properties!.name == "Western Sahara"
-    ) {
-      console.log(covidData);
-    }
-    if (!covidData) {
+    if (!countryCovidData || !countryPopData) {
       tooltipContent = `<div>
-      <p><strong>Country: </strong><br>${
+      <p id='country-name'>${
         (targetLayer.feature! as Feature).properties!.name
       }</p>
       <p><strong>NO DATA FOUND </strong>`;
     } else {
       tooltipContent = `<div>
-      <p><strong>Country: </strong><br>${
+      <p id='country-name'>${
         (targetLayer.feature! as Feature).properties!.name
       }</p>
       <h4>COVID-19 Data</h4>
-      <p><strong>Confirmed Cases: </strong><br>${covidData[
-        (targetLayer.feature! as Feature).id!
-      ].confirmed.toLocaleString()}</p>
-      <p><strong>Deaths: </strong><br>${covidData[
-        (targetLayer.feature! as Feature).id!
-      ].deaths.toLocaleString()}</p>
-      <p id="focus"><strong>Case Fatality Rate: </strong><br>${(
-        (covidData[(targetLayer.feature! as Feature).id!].deaths /
-          covidData[(targetLayer.feature! as Feature).id!].confirmed) *
+      <p><strong>Confirmed Cases: </strong><br>${countryCovidData.confirmed.toLocaleString()}</p>
+      <p><strong>Population: </strong><br>${countryPopData.totalpop.toLocaleString()}</p>
+      <p><strong>Deaths: </strong><br>${countryCovidData.deaths.toLocaleString()}</p>
+      <p><strong>Case Fatality Rate: </strong><br>${(
+        countryCovidData.fatalityRate * 100
+      ).toFixed(2)}%</p>
+      <p id="focus"><strong>Infection Rate: </strong><br>${(
+        (countryCovidData.confirmed / countryPopData.totalpop) *
         100
       ).toFixed(2)}%</p>
     </div>`;
     }
   } else {
-    if (!popData) {
+    if (!countryPopData) {
       tooltipContent = `<div>
-        <p><strong>Country: </strong><br>${
-          (targetLayer.feature! as Feature).properties!.name
-        }</p>
+      <p id='country-name'>${
+        (targetLayer.feature! as Feature).properties!.name
+      }</p>
         <p><strong>NO DATA FOUND </strong>`;
     } else {
       tooltipContent = `
     <div>
-      <p><strong>Country: </strong><br>${
-        (targetLayer.feature! as Feature).properties!.name
-      }</p>
+    <p id='country-name'>${
+      (targetLayer.feature! as Feature).properties!.name
+    }</p>
       <h4>Population Data</h4>
       <p><strong>Urban Population</strong><br>${(
         populationData.find(
@@ -465,8 +472,7 @@ function onEach(feature: Feature, layer: leaflet.Layer) {
 
 async function mapSetup() {
   // get covid data
-  const dataObj = await fetchCovidData();
-  covidStats = dataObj.result;
+  covidData = await fetchCovidData();
   // get population data
   populationData = await fetchPoplationData();
   // get geojson data
