@@ -1,20 +1,33 @@
 import "leaflet/dist/leaflet.css";
 import "./style.css";
-import leaflet, { LatLng, LeafletMouseEvent, geoJSON } from "leaflet";
+import leaflet, {
+  LatLng,
+  LeafletMouseEvent,
+  geoJSON,
+  Control,
+  DomUtil,
+} from "leaflet";
 import "./leafletWorkaround";
-import { GeoJsonObject, Feature } from "geojson";
+import { GeoJsonObject, Feature, Geometry } from "geojson";
 
 // html elements -----------------------------------------------------------------------------------------------------
 const countryNameDiv = document.querySelector("#countryName")!;
 const casesDiv = document.querySelector("#cases")!;
 const deathsDiv = document.querySelector("#deaths")!;
 const deathsperConfirmedDiv = document.querySelector("#deathsPerConfirmed")!;
+let legend: Control;
+let legendTitle: HTMLHeadElement;
 
 // leaflet map vars--------------------------------------------------------------------------------------------------------
 
 const map = leaflet.map("map").setView([0, 0], 2);
 const playerPos: leaflet.LatLng = new LatLng(0, 0);
 const playerMarker = leaflet.marker(playerPos);
+let currentFilter: "covid" | "population" = "covid";
+let geojson: leaflet.GeoJSON;
+
+let covidStats: CountryStats[] = [];
+let populationData: PopulationData[] = [];
 
 // custom data types -----------------------------------------------------------------------------------------------------
 
@@ -30,6 +43,17 @@ interface CovidData {
   count: number;
   date: string;
   result: CountryStats[];
+}
+
+interface PopulationData {
+  yearcode: string;
+  countryname: string;
+  countrycode: string;
+  totalpop: number;
+  netmigration: number;
+  ruralpop: number;
+  urbanpop: number;
+  urbanpopratio: number;
 }
 
 // openstreet map -----------------------------------------------------------------------------------------------------
@@ -50,6 +74,7 @@ leaflet
 
 // map buttons -----------------------------------------------------------------------------------------------------
 
+// geolocation button
 const sensorButton = document.querySelector("#sensor")!;
 sensorButton.addEventListener("click", () => {
   updateMap()
@@ -72,10 +97,22 @@ sensorButton.addEventListener("touchstart", (e) => {
     });
 });
 
+//filter button
+const filterButton = document.querySelector("#filter")!;
+filterButton.addEventListener("click", () => {
+  toggleFilter();
+});
+
+filterButton.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  toggleFilter();
+  //
+});
+
 // covid data -----------------------------------------------------------------------------------------------------
 async function fetchCovidData(): Promise<CovidData> {
   const response = await fetch(
-    "https://raw.githubusercontent.com/aguizaro/MapDataVisualizer/main/latest.json"
+    "https://raw.githubusercontent.com/aguizaro/MapDataVisualizer/main/resources/covid.json"
   );
 
   if (!response.ok) {
@@ -83,6 +120,26 @@ async function fetchCovidData(): Promise<CovidData> {
   }
   const data = (await response.json()) as CovidData;
   return data;
+}
+
+async function fetchPoplationData(): Promise<PopulationData[]> {
+  const response = await fetch(
+    "https://raw.githubusercontent.com/aguizaro/MapDataVisualizer/main/resources/pop.json"
+  );
+  if (!response.ok) {
+    throw new Error("Failed to fetch population data");
+  }
+  const data = await response.json();
+  const parsedData = data.map((item: PopulationData) => ({
+    ...item,
+    totalpop: Number(item.totalpop),
+    netmigration: Number(item.netmigration),
+    ruralpop: Number(item.ruralpop),
+    urbanpop: Number(item.urbanpop),
+    urbanpopratio: Number(Number(item.urbanpop) / Number(item.totalpop)),
+  })) as PopulationData[];
+
+  return parsedData;
 }
 
 // geolocation -----------------------------------------------------------------------------------------------------
@@ -115,28 +172,234 @@ async function updateMap() {
   }
 }
 
-function calculateColor(countryData: CountryData): string {
+function calculateCovidColor(data: CountryData): string {
   //country data is not this
-  if (countryData === undefined) {
+  if (data === undefined) {
     return "clear";
   }
-  const deaths = countryData.deaths;
-  const confirmed = countryData.confirmed;
+  const deaths = data.deaths;
+  const confirmed = data.confirmed;
   const deathsPerConfirmed = deaths / confirmed;
 
+  let color = "";
   if (deathsPerConfirmed < 0.01) {
-    return "green";
+    color = "#fff33b";
+  } else if (deathsPerConfirmed < 0.02) {
+    color = "#fdc70c";
+  } else if (deathsPerConfirmed < 0.03) {
+    color = "#f3903f";
+  } else if (deathsPerConfirmed < 0.4) {
+    color = "#ed683c";
+  } else if (deathsPerConfirmed < 0.5) {
+    color = "#e93e3a";
   }
-  if (deathsPerConfirmed < 0.02) {
-    return "yellow";
+  return color;
+}
+
+function calculatePopulationColor(data: PopulationData): string {
+  if (data === undefined) {
+    return "clear";
   }
-  if (deathsPerConfirmed < 0.03) {
-    return "orange";
+  const urbanPopRatio = data.urbanpopratio;
+  let color = "";
+  if (urbanPopRatio < 0.6) {
+    color = "#fff33b";
+  } else if (urbanPopRatio < 0.7) {
+    color = "#fdc70c";
+  } else if (urbanPopRatio < 0.8) {
+    color = "#f3903f";
+  } else if (urbanPopRatio < 0.9) {
+    color = "#ed683c";
+  } else if (urbanPopRatio < 0.99) {
+    color = "#e93e3a";
   }
-  if (deathsPerConfirmed < 0.5) {
-    return "red";
+  return color;
+}
+
+function updateToolTips() {
+  //delete previous tooltip
+  geojson.eachLayer((layer) => {
+    if (layer.getTooltip() == null) return;
+    if (layer.isTooltipOpen()) {
+      const tooltip = layer.getTooltip();
+      if (tooltip) {
+        const newContent = createToolTipContent(layer as leaflet.FeatureGroup);
+        tooltip.setContent(newContent).openTooltip();
+      }
+    } else layer.unbindTooltip();
+  });
+}
+
+function removeAllTooltips() {
+  geojson.eachLayer((layer) => {
+    layer.unbindTooltip();
+  });
+}
+
+function toggleFilter() {
+  currentFilter = currentFilter === "covid" ? "population" : "covid";
+  updateToolTips();
+  toggleLegend();
+  //refresh all layers
+  geojson.eachLayer((layer) => {
+    const countryCode = ((layer as leaflet.FeatureGroup).feature as Feature)
+      .id as string;
+    applyColorToLayer(layer, countryCode);
+  });
+}
+
+function applyColorToLayer(layer: leaflet.Layer, countryCode: string) {
+  const covidData = covidStats.find((entry) => {
+    return Object.keys(entry)[0] === countryCode;
+  });
+  const popData = populationData.find((entry) => {
+    return entry.countrycode === countryCode;
+  });
+
+  // set color based on covid data
+  const pathLayer = layer as leaflet.Path;
+  let fillColor = ""; //empty string uses default color
+  if (currentFilter === "covid" && covidData && countryCode) {
+    fillColor = calculateCovidColor(covidData[countryCode]);
+  } else if (currentFilter === "population" && popData && countryCode) {
+    fillColor = calculatePopulationColor(popData);
   }
-  return "maroon";
+  // apply color
+  pathLayer.setStyle({
+    fillColor: fillColor,
+    fillOpacity: 0.75,
+    weight: 2,
+  });
+}
+
+function toggleLegend() {
+  //delete previous legend
+  if (legend) {
+    map.removeControl(legend);
+  }
+
+  legend = new Control({ position: "bottomleft" });
+  legendTitle = DomUtil.create("h4", "legend-title");
+  if (currentFilter === "covid") {
+    legendTitle.innerText = "COVID-19 Fatality Rate";
+
+    legend.onAdd = () => {
+      const div = DomUtil.create("div", "legend");
+      div.appendChild(legendTitle);
+      const grades = [1, 2, 3, 4, 5];
+      const colors = ["#fff33b", "#fdc70c", "#f3903f", "#ed683c", "#e93e3a"];
+
+      for (let i = 0; i < grades.length; i++) {
+        div.innerHTML += `<i style="background-color:${colors[i]}">< ${grades[i]}%</i>`;
+      }
+      return div;
+    };
+  } else {
+    legendTitle.innerText = "Urban Population Ratio";
+
+    legend.onAdd = () => {
+      const div = DomUtil.create("div", "legend");
+      div.appendChild(legendTitle);
+      const grades = [60, 70, 80, 90, 99];
+      const colors = ["#fff33b", "#fdc70c", "#f3903f", "#ed683c", "#e93e3a"];
+
+      for (let i = 0; i < grades.length; i++) {
+        div.innerHTML += `<i style="background-color:${colors[i]}">< ${grades[i]}%</i>`;
+      }
+      return div;
+    };
+  }
+
+  legend.addTo(map);
+}
+
+function createToolTipContent(targetLayer: leaflet.FeatureGroup) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const covidData = covidStats.find((entry: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    return Object.keys(entry)[0] === (targetLayer.feature! as Feature).id;
+  })!;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const popData = populationData.find((entry: any) => {
+    return entry.countrycode === (targetLayer.feature! as Feature).id;
+  })!;
+
+  // display country data as tooltip
+  let tooltipContent;
+  if (currentFilter == "covid") {
+    if (
+      (targetLayer.feature! as Feature).properties!.name == "Western Sahara"
+    ) {
+      console.log(covidData);
+    }
+    if (!covidData) {
+      tooltipContent = `<div>
+      <p><strong>Country: </strong><br>${
+        (targetLayer.feature! as Feature).properties!.name
+      }</p>
+      <p><strong>NO DATA FOUND </strong>`;
+    } else {
+      tooltipContent = `<div>
+      <p><strong>Country: </strong><br>${
+        (targetLayer.feature! as Feature).properties!.name
+      }</p>
+      <h4>COVID-19 Data</h4>
+      <p><strong>Confirmed Cases: </strong><br>${covidData[
+        (targetLayer.feature! as Feature).id!
+      ].confirmed.toLocaleString()}</p>
+      <p><strong>Deaths: </strong><br>${covidData[
+        (targetLayer.feature! as Feature).id!
+      ].deaths.toLocaleString()}</p>
+      <p id="focus"><strong>Case Fatality Rate: </strong><br>${(
+        (covidData[(targetLayer.feature! as Feature).id!].deaths /
+          covidData[(targetLayer.feature! as Feature).id!].confirmed) *
+        100
+      ).toFixed(2)}%</p>
+    </div>`;
+    }
+  } else {
+    if (!popData) {
+      tooltipContent = `<div>
+        <p><strong>Country: </strong><br>${
+          (targetLayer.feature! as Feature).properties!.name
+        }</p>
+        <p><strong>NO DATA FOUND </strong>`;
+    } else {
+      tooltipContent = `
+    <div>
+      <p><strong>Country: </strong><br>${
+        (targetLayer.feature! as Feature).properties!.name
+      }</p>
+      <h4>Population Data</h4>
+      <p><strong>Urban Population</strong><br>${(
+        populationData.find(
+          (entry) => entry.countrycode === (targetLayer.feature! as Feature).id
+        )?.urbanpop ?? "N/A"
+      ).toLocaleString()}</p>
+    <p><strong>Rural Population</strong><br>${(
+      populationData.find(
+        (entry) => entry.countrycode === (targetLayer.feature! as Feature).id
+      )?.ruralpop ?? "N/A"
+    ).toLocaleString()}</p>
+    <p><strong>Total Population</strong><br>${(
+      populationData.find(
+        (entry) => entry.countrycode === (targetLayer.feature! as Feature).id
+      )?.totalpop ?? "N/A"
+    ).toLocaleString()}</p>
+      <p id="focus"><strong>Urban Ratio</strong><br>${(
+        (Number(
+          populationData.find(
+            (entry) =>
+              entry.countrycode === (targetLayer.feature! as Feature).id
+          )?.urbanpopratio
+        ) ?? "N/A") * 100
+      ).toFixed(2)}%</p>
+    </div>
+  `;
+    }
+  }
+  return tooltipContent;
 }
 
 // geoJSON event handlers -----------------------------------------------------------------------------------------------------
@@ -144,7 +407,8 @@ function calculateColor(countryData: CountryData): string {
 function onHover(e: LeafletMouseEvent) {
   const targetLayer = e.target;
   targetLayer.setStyle({
-    fillOpacity: 0.9,
+    fillOpacity: 1,
+    weight: 4,
   });
 
   //display country name
@@ -162,110 +426,60 @@ function onHover(e: LeafletMouseEvent) {
 function onOut(e: LeafletMouseEvent) {
   // reset opacity
   e.target.setStyle({
-    fillOpacity: 0.6,
+    fillOpacity: 0.75,
+    weight: 2,
   });
+  // clear country name
+  countryNameDiv.textContent = "";
 }
 
 function onClick(e: LeafletMouseEvent) {
-  //delete previous tooltip
-  map.eachLayer((layer) => {
-    if (layer instanceof leaflet.Tooltip) {
-      map.removeLayer(layer);
-    }
-  });
+  removeAllTooltips();
 
-  const targetLayer = e.target;
+  const targetLayer = e.target as leaflet.FeatureGroup;
 
   //zoom to country on click
-  map.fitBounds(targetLayer.getBounds() as leaflet.LatLngBoundsLiteral);
-
-  targetLayer.setStyle({
-    fillOpacity: 0.9,
-  });
+  map.fitBounds(targetLayer.getBounds().pad(0.5));
 
   //display country name
-  const countryName = targetLayer.feature.properties.name;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const countryName = (targetLayer.feature as Feature<Geometry, any>).properties
+    .name;
   countryNameDiv.textContent = countryName;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const countryData = covidStats.find((entry: any) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    return Object.keys(entry)[0] === targetLayer.feature.id;
-  });
-
-  // display country data as tooltip
-  let tooltipContent;
-  if (countryData) {
-    tooltipContent = `
-      <div">
-        <p><strong>Country: </strong><br>${
-          targetLayer.feature.properties.name
-        }</p>
-        <p><strong>Confirmed Cases: </strong><br>${countryData[
-          targetLayer.feature.id
-        ].confirmed.toLocaleString()}</p>
-        <p><strong>Deaths: </strong><br>${countryData[
-          targetLayer.feature.id
-        ].deaths.toLocaleString()}</p>
-        <p><strong>Case Fatality Rate: </strong><br>${(
-          (countryData[targetLayer.feature.id].deaths /
-            countryData[targetLayer.feature.id].confirmed) *
-          100
-        ).toFixed(2)}%</p>
-      </div>
-    `;
-  } else {
-    // no data found
-    tooltipContent = `<div>
-      <p><strong>Country: </strong><br>${targetLayer.feature.properties.name}</p>
-      <p><strong>NO DATA FOUND </strong>`;
-  }
+  const tooltipContent = createToolTipContent(targetLayer);
   //open tooltip
   targetLayer.bindTooltip(tooltipContent, { permanent: true }).openTooltip();
 }
 
-// calculate deaths per confirmed covid case for each country
+//
 function onEach(feature: Feature, layer: leaflet.Layer) {
-  const countryCode = feature.id;
-  const countryStats = covidStats.find((entry) => {
-    return Object.keys(entry)[0] === countryCode;
-  });
-
-  // set color based on covid data
-  const pathLayer = layer as leaflet.Path;
-  const fillColor = countryStats
-    ? calculateColor(countryStats[countryCode!])
-    : "clear";
-  pathLayer.setStyle({
-    fillColor: fillColor,
-    fillOpacity: 0.6,
-  });
+  const countryCode = feature.id as string;
+  applyColorToLayer(layer, countryCode);
 
   // add event listeners
-  pathLayer.on({ mouseover: onHover, mouseout: onOut, click: onClick });
+  layer.on({ mouseover: onHover, mouseout: onOut, click: onClick });
 }
 
 // map setup -----------------------------------------------------------------------------------------------------
-
-let covidStats: CountryStats[] = [];
 
 async function mapSetup() {
   // get covid data
   const dataObj = await fetchCovidData();
   covidStats = dataObj.result;
+  // get population data
+  populationData = await fetchPoplationData();
   // get geojson data
   const data = await fetch(
     "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json"
   );
   const geoJSONData = (await data.json()) as GeoJsonObject;
   // geojson layer
-  geoJSON(geoJSONData, {
+  geojson = geoJSON(geoJSONData, {
     onEachFeature: onEach,
-    style: {
-      fillOpacity: 0.6,
-      weight: 1,
-    },
   }).addTo(map);
+  // create legend
+  toggleLegend();
 }
 
 // main -----------------------------------------------------------------------------------------------------
